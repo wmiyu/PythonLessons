@@ -12,7 +12,9 @@
 # ************************************************************************** */
 
 from urllib import request, parse
-import sys
+import sys, ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 myUrl = "http://www.google.com/search?"
 valueToSearch = {'q': 'Ecole 42'}

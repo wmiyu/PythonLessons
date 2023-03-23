@@ -28,14 +28,15 @@ helpful site:              regex101.com
 """
 import re
 
-filein = open('dir20.txt', 'r', encoding='utf-16le')
+filein = open('dir20.txt', 'r', encoding='utf-8')
 
 mytext = filein.read()
 filein.close()
 print(mytext)
 
 # ================= searching date + time from dir output =========
-filterlookfor = r"\d\d.\d\d.\d\d\d\d\s+\d\d:\d\d"
+# filterlookfor = r"\d\d.\d\d.\d\d\d\d\s+\d\d:\d\d"
+filterlookfor = r"\w+\s\d+\s+\d\d:\d\d"
 
 allresults = re.findall(filterlookfor, mytext)
 
